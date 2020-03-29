@@ -53,18 +53,18 @@ class Net(nn.Module):
         ## Define the feedforward behavior of this model
         ## x is the input image and, as an example, here you may choose to include a pool/conv step:
         # Convolutional layers
-        x =               self.pool(self.activation1_5(self.conv1(x))
-        x = self.dropout1(self.pool(self.activation1_5(self.conv2(x)))
-        x = self.dropout2(self.pool(self.activation1_5(self.conv3(x)))
-        x = self.dropout3(self.pool(self.activation1_5(self.conv4(x)))
-        x = self.dropout4(self.pool(self.activation1_5(self.conv5(x)))
+        x =               self.pool(self.activation1_5(self.conv1(x)))
+        x = self.dropout1(self.pool(self.activation1_5(self.conv2(x))))
+        x = self.dropout2(self.pool(self.activation1_5(self.conv3(x))))
+        x = self.dropout3(self.pool(self.activation1_5(self.conv4(x))))
+        x = self.dropout4(self.pool(self.activation1_5(self.conv5(x))))
         
         # Flatten
         x = x.view(x.size(0), -1)
                           
         # Fully-connected layers
-        x = self.dropout5(self.activation1_5(self.dense1(x))
-        x = self.dropout6(                   self.dense2(x)))
+        x = self.dropout5(self.activation1_5(self.dense1(x)))
+        x = self.dropout6(                   self.dense2(x))
         x =                                  self.dense3(x)
 
         # a modified x, having gone through all the layers of your model, should be returned
